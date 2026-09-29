@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thiranex Task 4 - Asynchronous Weather Dashboard using Public REST API">
+    <title>Real-Time Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="weather-container" tabindex="0">
+        <header class="weather-header">
+            <div class="logo-container">
+            <!-- <span class="sun-icon">☀️</span> -->
+            <span class="cloud-icon">☁️</span>
+        </div>
+            <h1>Live Weather Dashboard</h1>
+            <p class="subtitle">Internship - Asynchronous JS & RESTful APIs</p>
+        </header>
+
+        <!-- Search Input Form -->
+        <div class="search-box">
+            <input type="text" id="city-input" placeholder="Enter city name (e.g., Ajmer, Jaipur)..." aria-label="City Name Input">
+            <button id="search-btn" class="weather-btn">Search Weather</button>
+        </div>
+
+        <!-- Error Container -->
+        <div id="error-message" class="error-box hidden"></div>
+
+        <!-- Loading Indicator -->
+        <div id="loading" class="loading-box hidden">Fetching live metrics...</div>
+
+        <!-- Weather Metrics Output Container -->
+        <div id="weather-result" class="weather-card-content hidden">
+            <div class="main-info">
+                <h2 id="location-name">City Name</h2>
+                <div class="temperature-display">
+                    <span id="temp-value">--</span><span class="unit">°C</span>
+                </div>
+            </div>
+
+            <!-- Grid Layout for Weather Properties -->
+            <div class="metrics-grid">
+                <div class="metric-item">
+                    <span class="metric-label">Humidity</span>
+                    <span id="humidity-value" class="metric-data">--</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Wind Speed</span>
+                    <span id="wind-value" class="metric-data">--</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Weather Status</span>
+                    <span id="status-value" class="metric-data">--</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

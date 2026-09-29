@@ -1,0 +1,207 @@
+/* --- PREMIUM GLASSMORPHISM & VARIABLES --- */
+:root {
+    --bg-color: #225cb4;
+    --card-bg: rgba(133, 133, 133, 0.65);
+    --input-bg: #112240;
+    --text-main: #e2e8f0;
+    --text-muted: #8892b0;
+    --accent-color: #ecec55;
+    --accent-hover: #4cd3b2;
+    --error-color: #ff6b6b;
+    --border-color: rgba(100, 255, 218, 0.15);
+}
+
+body {
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 50px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-main);
+}
+
+.weather-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--border-color);
+}
+
+.weather-container:focus {
+    outline: none;
+    border-color: rgba(100, 255, 218, 0.3);
+}
+
+.weather-header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+    padding-bottom: 15px;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 10px auto;
+}
+
+
+.cloud-icon::before {
+    font-family: FontAwesome;
+    position: absolute;
+}
+
+.cloud-icon {
+    font-size: 60px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-bottom: 10px;
+    color: #3498db
+}
+
+
+.weather-header h1 {
+    margin: 0;
+    color: var(--accent-color);
+    font-size: 26px;
+}
+
+.subtitle {
+    margin: 6px 0 0 0;
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+/* Search Box Layout */
+.search-box {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 14px;
+    background-color: var(--input-bg);
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    border-radius: 8px;
+    color: var(--text-main);
+    font-size: 16px;
+    transition: border-color 0.2s;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.weather-btn {
+    background-color: var(--accent-color);
+    color: #0a192f;
+    border: none;
+    padding: 0 22px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.weather-btn:hover {
+    background-color: var(--accent-hover);
+    box-shadow: 0 0 12px rgba(100, 255, 218, 0.3);
+}
+
+/* Logic Notification States */
+.hidden {
+    display: none !important;
+}
+
+.error-box {
+    background-color: rgba(255, 107, 107, 0.1);
+    border: 1px solid var(--error-color);
+    color: var(--error-color);
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.loading-box {
+    text-align: center;
+    color: var(--accent-color);
+    font-size: 15px;
+    margin: 20px 0;
+}
+
+/* Weather Result Output Presentation */
+.main-info {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#location-name {
+    margin: 0 0 10px 0;
+    font-size: 28px;
+    color: var(--text-main);
+}
+
+.temperature-display {
+    font-size: 56px;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.unit {
+    font-size: 28px;
+    font-weight: 400;
+    vertical-align: super;
+    margin-left: 5px;
+}
+
+/* Two-Dimensional Grid for secondary data properties */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.metric-item {
+    background-color: rgba(10, 25, 47, 0.5);
+    border: 1px solid rgba(100, 255, 218, 0.08);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    transition: border-color 0.2s;
+}
+
+.metric-item:hover {
+    border-color: rgba(100, 255, 218, 0.2);
+}
+
+.metric-label {
+    display: block;
+    color: var(--text-muted);
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.metric-data {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+@media (max-width: 480px) {
+    .search-box { flex-direction: column; }
+    .weather-btn { padding: 12px; }
+    .metrics-grid { grid-template-columns: 1fr; }
+}
